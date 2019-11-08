@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            button {
+                width: 30px;
+                margin: 5px 12px;
+                color: blue;
+
+            }
+            div {
+                width: 230px;
+                border: 2px solid black ;
+            }
+            .screen {
+                margin: 10px 10px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input class="screen" type="text" size="28px" id="screen" > <br>
+            <button type="button" value="1" onclick="addToScreen(this.value)" >1</button>
+            <button type="button" value="2" onclick="addToScreen(this.value)">2</button>
+            <button type="button" value="3" onclick="addToScreen(this.value)">3</button>
+            <button type="button" value="+" class="op" onclick="addToScreen(this.value)">+</button> <br>
+            <button type="button" value="4" onclick="addToScreen(this.value)">4</button>
+            <button type="button" value="5" onclick="addToScreen(this.value)">5</button>
+            <button type="button" value="6" onclick="addToScreen(this.value)">6</button>
+            <button type="button" value="-" class="op" onclick="addToScreen(this.value)">-</button> <br>
+            <button type="button" value="7" onclick="addToScreen(this.value)">7</button>
+            <button type="button" value="8" onclick="addToScreen(this.value)">8</button>
+            <button type="button" value="9" onclick="addToScreen(this.value)">9</button>
+            <button type="button" value="*" class="op" onclick="addToScreen(this.value)">x</button> <br>
+            <button type="button" value="c" onclick="clearScreen();">c</button>
+            <button type="button" value="0" onclick="addToScreen(this.value)">0</button>
+            <button type="button" value="=" onclick="calc();">=</button>
+            <button type="button" value="/" onclick="addToScreen(this.value)">/</button>
+        </div>
+
+        <script>
+            let screen = document.getElementById('screen');
+            function addToScreen(value) {
+                screen.value += value;
+            }
+
+            function calc() {
+                let result = eval(screen.value);
+                screen.value = result;
+            }
+
+            function clearScreen() {
+                screen.value = "";
+            }
+        </script>
+    </body>
+    </html>

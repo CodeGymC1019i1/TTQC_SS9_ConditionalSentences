@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+    height: 150px;
+    width: 400px;
+}
+    </style>
+</head>
+<body>
+        <div class="vien">
+            <img src="images/1_1.jpg" id="img_1" onclick="changeImage(document.getElementById('img_1'),'images/',1)">
+            <br/>
+            <img src="images/3_2.jpg" id="img_2" onclick="changeImage(document.getElementById('img_2'),'images/',2)">
+            <br/>
+            <img src="images/2_3.jpg" id="img_3" onclick="changeImage(document.getElementById('img_3'),'images/',3)">
+            <br/>
+            <img src="images/3_4.jpg" id="img_4" onclick="changeImage(document.getElementById('img_4'),'images/',4)">
+        </div>
+
+        <script>
+            function changeImage(image,source,index){
+                let i;
+                    for(i=1;i<=3;i++){
+                        if(image.src.match(source+i+'_'+index+'.jpg')){
+                            if(i<3){
+                                image.src=source+(i+1)+'_'+index+'.jpg';
+                                break;
+                            }else{
+                                image.src=source+1+'_'+index+'.jpg';
+                            }
+                        }
+                }
+                compareSrc();
+            }
+            function compareSrc() {
+                let img_1 = document.getElementById('img_1');
+                let img_2 = document.getElementById('img_2');
+                let img_3 = document.getElementById('img_3');
+                let img_4 = document.getElementById('img_4');
+                let a = img_1.src.substr(0,img_1.src.length-6);
+                let b = img_2.src.substr(0,img_2.src.length-6);
+                let c = img_3.src.substr(0,img_3.src.length-6);
+                let d = img_4.src.substr(0,img_4.src.length-6);
+                if(a===b && a===c && a===d){
+                    alert('done');
+                }
+            }
+        </script>
+</body>
+</html>
